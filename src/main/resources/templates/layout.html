@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hotwire with Spring Boot - "{${pageTitle}}"</title>
+    <title th:insert="${pageTitle}"></title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+    <style>
+        turbo-frame {
+            border: 3px dotted green;
+            display: inline-block;
+        }
+
+        article {
+            margin-top: 3em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spring Boot Hotwire Demo</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/second">Second</a>
+            <a href="/third">Third</a>
+        </nav>
+    </header>
+    <main>
+        <div th:insert="~{${page} :: content}"></div>
+    </main>
+    <footer>
+        <p>Your team name can go here</p>
+    </footer>
+</body>
+</html>

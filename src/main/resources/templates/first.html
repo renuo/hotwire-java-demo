@@ -1,0 +1,85 @@
+<div th:fragment="content">
+    <article>
+        <h2>Exercise 1 - Integrate turbo</h2>
+        <p>
+            <a href="https://turbo.hotwired.dev/handbook/installing" target="_blank">
+                Read through the docs and integrate turbo
+            </a>
+            If you do it correctly, navigate between the pages, and you will see that the navigation is handled by the
+            library, the body is replaced, the URL changes, but not the page title.
+        </p>
+    </article>
+
+    <article>
+        <h2>Exercise 2 - Replace the content of this article</h2>
+        <p>
+            On the second page there's an "article" for the Exercise 2.
+            Using turbo frames, you should include a link, in this article that once clicked replaces the content with
+            the article on the second page.
+        </p>
+    </article>
+
+    <article>
+        <h2>Exercise 3 - Escape the frame</h2>
+        <p>
+            In the exercise before, implement a link to the third page that escapes the turbo frame and performs a
+            standard navigation.
+        </p>
+    </article>
+
+    <article>
+        <h2>Exercise 4 - The external frame</h2>
+        <div style="display:flex">
+            <article>
+                <turbo-frame id="left-frame">
+                    <p>
+                        Do something so that by clicking this button, the content of the article on the right gets
+                        replaced.
+                    </p>
+                </turbo-frame>
+            </article>
+            <article>
+                <turbo-frame id="right-frame">
+                    <p>Replace me. I am the one on the right.</p>
+                </turbo-frame>
+            </article>
+        </div>
+    </article>
+
+    <article>
+        <h2>Exercise 5 - Pagination</h2>
+        <p>
+        Let's build a server-side pagination. Pass the `page` URL parameter and paginate these letters by five.
+        Implement the links to go to the available pages (1,2,3,...)
+        <table>
+            <thead>
+            <tr>
+                <th>Letter</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="letter : ${alphabet}">
+                <td th:text="${letter}"></td>
+            </tr>
+            </tbody>
+        </table>
+        </p>
+    </article>
+
+    <article>
+        <h2>Exercise 6 - Lazy loading</h2>
+        <p>
+            Display some content in this article lazy-loaded. Make sure that the content is loaded slowly, so we can see a nice loading indicator in the meantime.
+        </p>
+    </article>
+
+    <article>
+        <h2>Exercise 7 - Come alive with turbo-streams</h2>
+        <p>
+            Read through the turbo-stream documentation and learn how to respond with turbo streams.
+            The goal of your team is to display a counter. One of you runs the app, the second person connects to it.
+            Every time the button is pressed, the counter increases.
+            For inspiration and help use https://github.com/innoq/hotwire-demo
+        </p>
+    </article>
+</div>
